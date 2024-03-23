@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {%block content%}
+<div class="container-fluid row my-5 gx-2 gy-3">
+  {% for meal in categories %}
+  <div class="col-4 card mx-2" style="width: 18rem">
+    <img
+      src="{{meal.strCategoryThumb}}"
+      class="card-img-top border"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{meal.idCategory}}</h5>
+      <h5 class="card-title">{{meal.strCategory}}</h5>
+      <p class="card-text">
+        {{meal.strCategoryDescription | truncatewords:10}}
+      </p>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%}
